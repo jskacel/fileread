@@ -1,0 +1,16 @@
+- name: memory testing
+  hosts: all
+  gather_facts: false
+  vars:
+    filepath: "/root/1gb/test.file"
+
+  tasks:
+  - name: Read the file
+    ansible.builtin.file:
+      path: "{{ filepath }}"
+      state: present
+    register: file_content
+
+  - name: Sleep to check memory consumption
+    ansible.builtin.pause:
+      minutes: 2
