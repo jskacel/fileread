@@ -6,10 +6,9 @@
 
   tasks:
   - name: Read the file
-    ansible.builtin.file:
-      path: "{{ filepath }}"
-      state: file
-    register: file_content
+    ansible.builtin.command:
+      cmd: "cat {{ filepath }}"
+    register: cmd_output
 
   - name: Sleep to check memory consumption
     ansible.builtin.pause:
