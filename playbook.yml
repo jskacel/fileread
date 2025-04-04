@@ -8,7 +8,7 @@
   - name: Read the file
     ansible.builtin.file:
       path: "{{ filepath }}"
-      state: present
+      state: file
     register: file_content
 
   - name: Sleep to check memory consumption
