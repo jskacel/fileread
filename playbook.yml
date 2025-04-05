@@ -11,8 +11,8 @@
     register: cmd_output
 
   - name: Replace stuff in the output
-    ansible.builtin.command:
-      debug: "{{ cmd_output | replace(' ','_') }}"
+    ansible.builtin.debug:
+      msg: "{{ cmd_output | replace(' ','_') }}"
 
   - name: Sleep to check memory consumption
     ansible.builtin.pause:
