@@ -3,4 +3,4 @@
    ```
    # yes this is test file | head -c 130M > /tmp/test.file
    ```
-2. Run the playbook
+2. Run the playbook (change `filepath`)
